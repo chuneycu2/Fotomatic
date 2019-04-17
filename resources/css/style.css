@@ -28,7 +28,7 @@ html {
   display: block;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 450px) {
   .main-content {
     top: 2.5625rem;
   }
@@ -52,6 +52,8 @@ header .content {
 
 header .logo {
   flex: 1;
+  font-family: "Roboto-Light", sans-serif;
+  font-size: 1.5em;
 }
 
 header nav ul {
@@ -74,35 +76,72 @@ header .icon {
   padding-left: .75rem;
 }
 
+header .tablet {
+  display: none;
+}
+
 header .mobile {
   display: none;
 }
 
+
 @media only screen and (max-width: 760px) {
+  header .content {
+    display: flex;
+    justify-content: space-between;
+  }
+
   header .desktop {
     display: none;
   }
 
-  header .mobile {
+  header .tablet {
     display: block;
     width: 100%;
+    flex: 2;
   }
 
-  header .content {
-    padding: .5rem 0;
-  }
-
-  header .mobile ul {
+  header .tablet ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
   }
 
-  header .mobile li {
+  header .tablet li {
     padding: 0;
   }
 
+  header .tablet .button {
+    padding: .1875rem .5rem;
+    background-color: #9dc20b;
+    line-height: 1.6;
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  header .mobile {
+    display: flex;
+    width: 100%;
+  }
+  header .tablet, header .desktop {
+    display: none;
+  }
+  header .content {
+    padding: 1rem;
+  }
+  header .logo {
+    display: none;
+  }
+  header .mobile ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  header .mobile li {
+    padding: 0 1.5em;
+  }
   header .mobile .button {
     padding: .1875rem .5rem;
     background-color: #9dc20b;
@@ -224,21 +263,31 @@ header .mobile {
 #features-section {
   display: flex;
   justify-content: space-between;
-  padding: 4rem 5%;
+  padding: 4rem 5% 2.875rem 5%;
   background-color: #f3f3f3;
 }
 
 .feature {
   flex: 1;
-  padding: 2rem;
-  margin: 0px 1.25rem;
+  width: 100%;
+  margin: 0px 1.188em;
   background-color: white;
 }
 
 .feature .image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature .center .image-container img {
   width: 90%;
   height: 65%;
-  margin: 0 auto;
+  margin: 2em 2em 2.5em 2em;
+}
+
+.feature .center .content {
+  padding: 0 2.5rem 2.5rem 2.5rem;
 }
 
 .feature h2 {
@@ -292,22 +341,30 @@ header .mobile {
   margin-bottom: 5rem;
 }
 
-#filters-section .content h2 {
+#filters-section h2 {
   font-size: 2.25rem;
   font-weight: bold;
+  font-family: "Roboto-Bold", sans-serif;
   color: white;
 }
 
-#filters-section .content h3 {
+#filters-section h3 {
   font-size: 1rem;
   line-height: 1.4;
   font-weight: 300;
+  font-family: "Roboto-Light", sans-serif;
   color: white;
 }
 
 #filters-section .images-container {
   max-width: 100%;
   padding: 0 1%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#filters-section .images-container .image-container img {
+  width: 100%
 }
 
 @media only screen and (max-width: 760px) {
@@ -346,13 +403,13 @@ header .mobile {
   background-color: #f3f3f3;
 }
 
-#quotes-section content {
+#quotes-section .content {
   padding: 5rem 0;
 }
 
-#quotes-section quote {
+#quotes-section .quote {
   padding-right: 1.875rem;
-  font-family: "Palatino", serif;
+  font-family: "Palatino-Italic", serif;
   font-size: 1.875rem;
   line-height: 1.1;
   font-style: italic;
